@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 function App() {
   const [message, setMessage] = useState('');
 
+
+
   useEffect(() => {
     fetch('/api')
       .then((res) => res.text())
@@ -17,5 +19,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;

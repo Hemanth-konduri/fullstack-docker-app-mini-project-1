@@ -11,9 +11,11 @@ const dbClient = new Client({
   port: process.env.DB_PORT || 5432,
 });
 
+
 dbClient.connect()
   .then(() => console.log('Connected to Postgres'))
   .catch((err) => console.error('Failed to connect to Postgres', err));
+
 
 app.get('/api', async (req, res) => {
   try {
@@ -24,6 +26,7 @@ app.get('/api', async (req, res) => {
     res.status(500).send('Database error');
   }
 });
+
 
 app.listen(port, () => {
   console.log(`Backend listening at http://localhost:${port}`);
